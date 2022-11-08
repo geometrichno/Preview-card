@@ -8,12 +8,15 @@
 body {
     background-color: hsl(0, 0%, 95%);
     font-size: 0.9rem;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
 }
 
 .container {
     max-width: 800px;
     display:flex;
-    margin: 50px auto;
+
 }
 
 .inner-layout {
@@ -21,7 +24,6 @@ body {
 }
 
 .suv, .sedan, .luxury {
-    /* width: 33%; */
     min-height: 100px;
     flex: 1;
 }
@@ -48,6 +50,7 @@ img {
 
 .header {
     font-family: 'Big Shoulders Display';
+    font-size:xx-large;
     color: hsl(0, 0%, 95%);
     margin-top: 20px;
 }
@@ -56,42 +59,52 @@ img {
     font-family: 'Lexend Deca';
     color: hsla(0, 0%, 100%, 0.75);
     margin-top: 20px;
+    font-size: 16px;
 }
 
-button {
+.button {
     background-color: hsl(0, 0%, 95%);
     font-family: 'Lexend Deca';
+    text-decoration:none;
+    text-align: center;
     border: none;
-    margin-top: 50px;
+    margin-top: 100px;
     padding: 15px 25px;
     border-radius: 40px;
+    display: block;
+    max-width: 20vh;
 }
 
-button:hover {
+.button:hover {
     cursor: pointer;
 }
 
-.sedan button {
+.sedan .button {
     color: hsl(31, 77%, 52%); 
 }
 
-.suv button {
+.suv .button {
     color: hsl(184, 100%, 22%);
 }
 
-.luxury button {
+.luxury .button {
     color: hsl(179, 100%, 13%);
 }
 
 @media (max-width:700px) {
+    body {
+        display: grid;
+        place-content: center;
+    }
     .container {
-        max-width: 90%;
         display: flex;
         flex-direction: column;
+        max-width: 90vw;
+        margin: 5vh auto;
     }
     .suv, .sedan, .luxury {
         width: 100%;
-        min-height: 100px;
+        min-height: 30vh;
         border-radius: 0;
     }
 
@@ -103,5 +116,9 @@ button:hover {
     .luxury {
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+    }
+    .button {
+        margin-top: 1.875rem;
+        margin-bottom: 3.125rem;
     }
 }
